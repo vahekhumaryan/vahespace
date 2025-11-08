@@ -72,6 +72,34 @@
             z-index: 0;
         }
 
+        #bg-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: auto;
+        }
+
+        .hero {
+            position: relative;
+        }
+
+        .hero__copy,
+        .hero__meta {
+            position: relative;
+            z-index: 1;
+        }
+
         a {
             color: inherit;
             text-decoration: none;
@@ -470,6 +498,10 @@
             .hero {
                 grid-template-columns: 1fr;
             }
+
+            #hero-canvas {
+                opacity: 0.4;
+            }
         }
 
         @media (max-width: 640px) {
@@ -498,12 +530,22 @@
                 flex-direction: column;
                 gap: 0.5rem;
             }
+
+            #bg-canvas {
+                opacity: 0.3;
+            }
+
+            #hero-canvas {
+                opacity: 0.3;
+            }
         }
     </style>
     <script src="https://calendar.google.com/calendar/scheduling-button-script.js" defer></script>
     <script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
+    <canvas id="bg-canvas"></canvas>
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="page">
         <header>
@@ -528,6 +570,7 @@
 
         <main id="main-content">
             <section class="hero" aria-labelledby="hero-title">
+                <canvas id="hero-canvas"></canvas>
                 <div class="hero__copy">
                     <p class="hero__eyebrow">Based in Yerevan - modernising support and operations worldwide</p>
                     <h1 id="hero-title" class="hero__title">Business process consulting that fuses automation and customer support</h1>
@@ -698,6 +741,304 @@
                 });
             }
         });
+    </script>
+    <script>
+        // Three.js 3D Background and Hero Animation
+        (function() {
+            'use strict';
+
+            // Color scheme from CSS variables
+            const ACCENT_COLOR = 0x7ceaff;
+            const ACCENT_COLOR_DARK = 0x4db8cc;
+
+            // ===== BACKGROUND PARTICLE SYSTEM =====
+            function initBackgroundParticles() {
+                const canvas = document.getElementById('bg-canvas');
+                if (!canvas) return;
+
+                const scene = new THREE.Scene();
+                const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+                const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+                camera.position.z = 50;
+
+                // Create particle system
+                const particleCount = window.innerWidth < 768 ? 300 : 500;
+                const geometry = new THREE.BufferGeometry();
+                const positions = new Float32Array(particleCount * 3);
+                const velocities = new Float32Array(particleCount * 3);
+                const sizes = new Float32Array(particleCount);
+
+                for (let i = 0; i < particleCount; i++) {
+                    const i3 = i * 3;
+                    // Random positions in a large sphere
+                    positions[i3] = (Math.random() - 0.5) * 150;
+                    positions[i3 + 1] = (Math.random() - 0.5) * 150;
+                    positions[i3 + 2] = (Math.random() - 0.5) * 150;
+
+                    // Random velocities for floating effect
+                    velocities[i3] = (Math.random() - 0.5) * 0.02;
+                    velocities[i3 + 1] = (Math.random() - 0.5) * 0.02;
+                    velocities[i3 + 2] = (Math.random() - 0.5) * 0.02;
+
+                    sizes[i] = Math.random() * 2 + 0.5;
+                }
+
+                geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+                geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+
+                // Particle material with cyan accent
+                const material = new THREE.PointsMaterial({
+                    color: ACCENT_COLOR,
+                    size: 2,
+                    transparent: true,
+                    opacity: 0.6,
+                    blending: THREE.AdditiveBlending,
+                    sizeAttenuation: true
+                });
+
+                const particles = new THREE.Points(geometry, material);
+                scene.add(particles);
+
+                // Add connecting lines between nearby particles
+                const lineGeometry = new THREE.BufferGeometry();
+                const lineMaterial = new THREE.LineBasicMaterial({
+                    color: ACCENT_COLOR,
+                    transparent: true,
+                    opacity: 0.15,
+                    blending: THREE.AdditiveBlending
+                });
+                const lines = new THREE.LineSegments(lineGeometry, lineMaterial);
+                scene.add(lines);
+
+                // Mouse interaction
+                const mouse = { x: 0, y: 0 };
+                let mouseX = 0, mouseY = 0;
+
+                window.addEventListener('mousemove', (e) => {
+                    mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+                    mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+                });
+
+                // Scroll position for animations
+                let scrollY = 0;
+                window.addEventListener('scroll', () => {
+                    scrollY = window.scrollY;
+                });
+
+                // Animation loop
+                function animate() {
+                    requestAnimationFrame(animate);
+
+                    // Smooth mouse following
+                    mouse.x += (mouseX - mouse.x) * 0.05;
+                    mouse.y += (mouseY - mouse.y) * 0.05;
+
+                    // Update particle positions
+                    const positions = particles.geometry.attributes.position.array;
+                    const linePositions = [];
+
+                    for (let i = 0; i < particleCount; i++) {
+                        const i3 = i * 3;
+
+                        // Float particles
+                        positions[i3] += velocities[i3];
+                        positions[i3 + 1] += velocities[i3 + 1];
+                        positions[i3 + 2] += velocities[i3 + 2];
+
+                        // Boundary check - wrap around
+                        if (Math.abs(positions[i3]) > 75) velocities[i3] *= -1;
+                        if (Math.abs(positions[i3 + 1]) > 75) velocities[i3 + 1] *= -1;
+                        if (Math.abs(positions[i3 + 2]) > 75) velocities[i3 + 2] *= -1;
+
+                        // Connect nearby particles
+                        for (let j = i + 1; j < particleCount; j++) {
+                            const j3 = j * 3;
+                            const dx = positions[i3] - positions[j3];
+                            const dy = positions[i3 + 1] - positions[j3 + 1];
+                            const dz = positions[i3 + 2] - positions[j3 + 2];
+                            const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
+
+                            if (distance < 15) {
+                                linePositions.push(
+                                    positions[i3], positions[i3 + 1], positions[i3 + 2],
+                                    positions[j3], positions[j3 + 1], positions[j3 + 2]
+                                );
+                            }
+                        }
+                    }
+
+                    particles.geometry.attributes.position.needsUpdate = true;
+
+                    // Update lines
+                    lineGeometry.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
+
+                    // Rotate particles based on mouse and scroll
+                    particles.rotation.x = mouse.y * 0.2 + scrollY * 0.0002;
+                    particles.rotation.y = mouse.x * 0.2 + scrollY * 0.0001;
+
+                    renderer.render(scene, camera);
+                }
+
+                animate();
+
+                // Handle window resize
+                window.addEventListener('resize', () => {
+                    camera.aspect = window.innerWidth / window.innerHeight;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(window.innerWidth, window.innerHeight);
+                });
+            }
+
+            // ===== HERO 3D INTERACTIVE ELEMENT =====
+            function initHeroScene() {
+                const canvas = document.getElementById('hero-canvas');
+                if (!canvas) return;
+
+                const hero = document.querySelector('.hero');
+                const heroRect = hero.getBoundingClientRect();
+
+                const scene = new THREE.Scene();
+                const camera = new THREE.PerspectiveCamera(75, heroRect.width / heroRect.height, 0.1, 1000);
+                const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+
+                renderer.setSize(heroRect.width, heroRect.height);
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+                camera.position.z = 5;
+
+                // Create abstract geometric shape (torus knot)
+                const geometry = new THREE.TorusKnotGeometry(1.5, 0.4, 150, 20, 2, 3);
+
+                // Wireframe material with cyan color
+                const material = new THREE.MeshBasicMaterial({
+                    color: ACCENT_COLOR,
+                    wireframe: true,
+                    transparent: true,
+                    opacity: 0.4
+                });
+
+                const torusKnot = new THREE.Mesh(geometry, material);
+                scene.add(torusKnot);
+
+                // Add glow effect with a solid version
+                const glowGeometry = geometry.clone();
+                const glowMaterial = new THREE.MeshBasicMaterial({
+                    color: ACCENT_COLOR,
+                    transparent: true,
+                    opacity: 0.08,
+                    side: THREE.DoubleSide
+                });
+                const glow = new THREE.Mesh(glowGeometry, glowMaterial);
+                glow.scale.set(1.05, 1.05, 1.05);
+                scene.add(glow);
+
+                // Add particles around the shape
+                const particleGeometry = new THREE.BufferGeometry();
+                const particleCount = 200;
+                const particlePositions = new Float32Array(particleCount * 3);
+
+                for (let i = 0; i < particleCount; i++) {
+                    const i3 = i * 3;
+                    const radius = 3;
+                    particlePositions[i3] = (Math.random() - 0.5) * radius;
+                    particlePositions[i3 + 1] = (Math.random() - 0.5) * radius;
+                    particlePositions[i3 + 2] = (Math.random() - 0.5) * radius;
+                }
+
+                particleGeometry.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
+
+                const particleMaterial = new THREE.PointsMaterial({
+                    color: ACCENT_COLOR,
+                    size: 0.05,
+                    transparent: true,
+                    opacity: 0.6,
+                    blending: THREE.AdditiveBlending
+                });
+
+                const particleSystem = new THREE.Points(particleGeometry, particleMaterial);
+                scene.add(particleSystem);
+
+                // Mouse interaction
+                const mouse = { x: 0, y: 0 };
+                let targetRotationX = 0;
+                let targetRotationY = 0;
+
+                canvas.addEventListener('mousemove', (e) => {
+                    const rect = canvas.getBoundingClientRect();
+                    mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+                    mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+
+                    targetRotationY = mouse.x * Math.PI * 0.3;
+                    targetRotationX = mouse.y * Math.PI * 0.3;
+                });
+
+                // Scroll-based animation
+                let scrollY = 0;
+                window.addEventListener('scroll', () => {
+                    scrollY = window.scrollY;
+                });
+
+                // Animation loop
+                let time = 0;
+                function animate() {
+                    requestAnimationFrame(animate);
+
+                    time += 0.01;
+
+                    // Auto-rotation
+                    torusKnot.rotation.x += 0.005;
+                    torusKnot.rotation.y += 0.003;
+
+                    // Apply mouse influence
+                    torusKnot.rotation.x += (targetRotationX - torusKnot.rotation.x) * 0.05;
+                    torusKnot.rotation.y += (targetRotationY - torusKnot.rotation.y) * 0.05;
+
+                    // Sync glow with main object
+                    glow.rotation.copy(torusKnot.rotation);
+
+                    // Rotate particle system
+                    particleSystem.rotation.y = time * 0.5;
+                    particleSystem.rotation.x = Math.sin(time * 0.3) * 0.2;
+
+                    // Pulse effect
+                    const scale = 1 + Math.sin(time * 2) * 0.05;
+                    torusKnot.scale.set(scale, scale, scale);
+
+                    // Scroll-based position shift
+                    const scrollOffset = Math.min(scrollY * 0.002, 2);
+                    torusKnot.position.y = -scrollOffset;
+                    particleSystem.position.y = -scrollOffset;
+                    glow.position.y = -scrollOffset;
+
+                    renderer.render(scene, camera);
+                }
+
+                animate();
+
+                // Handle window resize
+                function onResize() {
+                    const heroRect = hero.getBoundingClientRect();
+                    camera.aspect = heroRect.width / heroRect.height;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(heroRect.width, heroRect.height);
+                }
+
+                window.addEventListener('resize', onResize);
+            }
+
+            // Initialize when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', () => {
+                    initBackgroundParticles();
+                    initHeroScene();
+                });
+            } else {
+                initBackgroundParticles();
+                initHeroScene();
+            }
+        })();
     </script>
     <script type="application/ld+json">
         {
