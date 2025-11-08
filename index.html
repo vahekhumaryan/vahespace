@@ -85,14 +85,6 @@
             z-index: 0;
         }
 
-        #bg-canvas {
-            position: fixed;
-            inset: 0;
-            z-index: 0;
-            pointer-events: none;
-            opacity: 0.6;
-        }
-
         #mouse-spotlight {
             position: fixed;
             width: 600px;
@@ -246,6 +238,7 @@
             transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
             font-size: 0.85rem;
             cursor: pointer;
+            position: relative;
         }
 
         .button--primary {
@@ -253,9 +246,7 @@
             color: #0a1013;
             border-color: transparent;
             font-weight: 600;
-            position: relative;
             overflow: hidden;
-            background-size: 200% 100%;
             transition: all 0.3s ease;
         }
 
@@ -266,6 +257,7 @@
             background: linear-gradient(135deg, #5dd4ed 0%, var(--accent) 100%);
             opacity: 0;
             transition: opacity 0.3s ease;
+            z-index: 0;
         }
 
         .button--primary:hover::before {
@@ -281,7 +273,8 @@
             color: #0a1013;
         }
 
-        .button--primary span {
+        .button--primary *,
+        .button--ghost * {
             position: relative;
             z-index: 1;
         }
@@ -289,7 +282,6 @@
         .button--ghost {
             background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(10px);
-            position: relative;
             overflow: hidden;
         }
 
@@ -300,6 +292,7 @@
             background: linear-gradient(135deg, rgba(124, 234, 255, 0.1), rgba(124, 234, 255, 0.05));
             opacity: 0;
             transition: opacity 0.3s ease;
+            z-index: 0;
         }
 
         .button--ghost:hover::before {
@@ -693,12 +686,13 @@
                 gap: 0.5rem;
             }
 
-            #bg-canvas {
+            #hero-canvas {
                 opacity: 0.3;
             }
 
-            #hero-canvas {
-                opacity: 0.3;
+            #mouse-spotlight {
+                width: 400px;
+                height: 400px;
             }
         }
     </style>
@@ -707,7 +701,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
-    <canvas id="bg-canvas"></canvas>
     <div id="mouse-spotlight"></div>
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="page">
@@ -935,154 +928,12 @@
         });
     </script>
     <script>
-        // Three.js 3D Background and Hero Animation
+        // Three.js Hero 3D Animation
         (function() {
             'use strict';
 
             // Color scheme from CSS variables
             const ACCENT_COLOR = 0x7ceaff;
-            const ACCENT_COLOR_DARK = 0x4db8cc;
-
-            // ===== BACKGROUND PARTICLE SYSTEM =====
-            function initBackgroundParticles() {
-                const canvas = document.getElementById('bg-canvas');
-                if (!canvas) return;
-
-                const scene = new THREE.Scene();
-                const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-                const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-
-                renderer.setSize(window.innerWidth, window.innerHeight);
-                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-                camera.position.z = 50;
-
-                // Create particle system
-                const particleCount = window.innerWidth < 768 ? 300 : 500;
-                const geometry = new THREE.BufferGeometry();
-                const positions = new Float32Array(particleCount * 3);
-                const velocities = new Float32Array(particleCount * 3);
-                const sizes = new Float32Array(particleCount);
-
-                for (let i = 0; i < particleCount; i++) {
-                    const i3 = i * 3;
-                    // Random positions in a large sphere
-                    positions[i3] = (Math.random() - 0.5) * 150;
-                    positions[i3 + 1] = (Math.random() - 0.5) * 150;
-                    positions[i3 + 2] = (Math.random() - 0.5) * 150;
-
-                    // Random velocities for floating effect
-                    velocities[i3] = (Math.random() - 0.5) * 0.02;
-                    velocities[i3 + 1] = (Math.random() - 0.5) * 0.02;
-                    velocities[i3 + 2] = (Math.random() - 0.5) * 0.02;
-
-                    sizes[i] = Math.random() * 2 + 0.5;
-                }
-
-                geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-                geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
-
-                // Particle material with cyan accent
-                const material = new THREE.PointsMaterial({
-                    color: ACCENT_COLOR,
-                    size: 2,
-                    transparent: true,
-                    opacity: 0.6,
-                    blending: THREE.AdditiveBlending,
-                    sizeAttenuation: true
-                });
-
-                const particles = new THREE.Points(geometry, material);
-                scene.add(particles);
-
-                // Add connecting lines between nearby particles
-                const lineGeometry = new THREE.BufferGeometry();
-                const lineMaterial = new THREE.LineBasicMaterial({
-                    color: ACCENT_COLOR,
-                    transparent: true,
-                    opacity: 0.15,
-                    blending: THREE.AdditiveBlending
-                });
-                const lines = new THREE.LineSegments(lineGeometry, lineMaterial);
-                scene.add(lines);
-
-                // Mouse interaction
-                const mouse = { x: 0, y: 0 };
-                let mouseX = 0, mouseY = 0;
-
-                window.addEventListener('mousemove', (e) => {
-                    mouseX = (e.clientX / window.innerWidth) * 2 - 1;
-                    mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
-                });
-
-                // Scroll position for animations
-                let scrollY = 0;
-                window.addEventListener('scroll', () => {
-                    scrollY = window.scrollY;
-                });
-
-                // Animation loop
-                function animate() {
-                    requestAnimationFrame(animate);
-
-                    // Smooth mouse following
-                    mouse.x += (mouseX - mouse.x) * 0.05;
-                    mouse.y += (mouseY - mouse.y) * 0.05;
-
-                    // Update particle positions
-                    const positions = particles.geometry.attributes.position.array;
-                    const linePositions = [];
-
-                    for (let i = 0; i < particleCount; i++) {
-                        const i3 = i * 3;
-
-                        // Float particles
-                        positions[i3] += velocities[i3];
-                        positions[i3 + 1] += velocities[i3 + 1];
-                        positions[i3 + 2] += velocities[i3 + 2];
-
-                        // Boundary check - wrap around
-                        if (Math.abs(positions[i3]) > 75) velocities[i3] *= -1;
-                        if (Math.abs(positions[i3 + 1]) > 75) velocities[i3 + 1] *= -1;
-                        if (Math.abs(positions[i3 + 2]) > 75) velocities[i3 + 2] *= -1;
-
-                        // Connect nearby particles
-                        for (let j = i + 1; j < particleCount; j++) {
-                            const j3 = j * 3;
-                            const dx = positions[i3] - positions[j3];
-                            const dy = positions[i3 + 1] - positions[j3 + 1];
-                            const dz = positions[i3 + 2] - positions[j3 + 2];
-                            const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
-
-                            if (distance < 15) {
-                                linePositions.push(
-                                    positions[i3], positions[i3 + 1], positions[i3 + 2],
-                                    positions[j3], positions[j3 + 1], positions[j3 + 2]
-                                );
-                            }
-                        }
-                    }
-
-                    particles.geometry.attributes.position.needsUpdate = true;
-
-                    // Update lines
-                    lineGeometry.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
-
-                    // Rotate particles based on mouse and scroll
-                    particles.rotation.x = mouse.y * 0.2 + scrollY * 0.0002;
-                    particles.rotation.y = mouse.x * 0.2 + scrollY * 0.0001;
-
-                    renderer.render(scene, camera);
-                }
-
-                animate();
-
-                // Handle window resize
-                window.addEventListener('resize', () => {
-                    camera.aspect = window.innerWidth / window.innerHeight;
-                    camera.updateProjectionMatrix();
-                    renderer.setSize(window.innerWidth, window.innerHeight);
-                });
-            }
 
             // ===== HERO 3D INTERACTIVE ELEMENT =====
             function initHeroScene() {
@@ -1222,12 +1073,8 @@
 
             // Initialize when DOM is ready
             if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', () => {
-                    initBackgroundParticles();
-                    initHeroScene();
-                });
+                document.addEventListener('DOMContentLoaded', initHeroScene);
             } else {
-                initBackgroundParticles();
                 initHeroScene();
             }
         })();
