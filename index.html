@@ -248,6 +248,7 @@
             font-weight: 600;
             overflow: hidden;
             transition: all 0.3s ease;
+            isolation: isolate;
         }
 
         .button--primary::before {
@@ -257,7 +258,7 @@
             background: linear-gradient(135deg, #5dd4ed 0%, var(--accent) 100%);
             opacity: 0;
             transition: opacity 0.3s ease;
-            z-index: 0;
+            z-index: -1;
         }
 
         .button--primary:hover::before {
@@ -273,16 +274,11 @@
             color: #0a1013;
         }
 
-        .button--primary *,
-        .button--ghost * {
-            position: relative;
-            z-index: 1;
-        }
-
         .button--ghost {
             background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(10px);
             overflow: hidden;
+            isolation: isolate;
         }
 
         .button--ghost::before {
@@ -292,7 +288,7 @@
             background: linear-gradient(135deg, rgba(124, 234, 255, 0.1), rgba(124, 234, 255, 0.05));
             opacity: 0;
             transition: opacity 0.3s ease;
-            z-index: 0;
+            z-index: -1;
         }
 
         .button--ghost:hover::before {
@@ -719,8 +715,7 @@
                 </ul>
             </nav>
             <div class="header-cta">
-                <a class="button button--primary" href="#book-a-call">Book audit</a>
-                <a class="button button--ghost" href="https://drive.google.com/file/d/1uI6aEdWY-mw9TwFfNvulCFdHkrB0pnPW/view" target="_blank" rel="noopener">Profile</a>
+                <a class="button button--ghost" href="https://drive.google.com/file/d/1uI6aEdWY-mw9TwFfNvulCFdHkrB0pnPW/view" target="_blank" rel="noopener">Download CV</a>
             </div>
         </header>
 
