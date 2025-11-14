@@ -1,11 +1,11 @@
-# Robots.txt for vahekhumaryan.com
+# Robots.txt for vahe.space
 User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /private/
 
 # Sitemap location
-Sitemap: https://vahekhumaryan.com/sitemap.xml
+Sitemap: https://vahe.space/sitemap.xml
 
 # Crawl-delay (optional, for rate limiting)
 Crawl-delay: 1
