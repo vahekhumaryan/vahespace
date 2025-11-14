@@ -1,0 +1,37 @@
+{
+  "name": "Vahe Khumaryan - Business Process & Automation Consultant",
+  "short_name": "Vahe Khumaryan",
+  "description": "Business process consulting that fuses automation and customer support. Specializing in Zendesk engineering, AI-powered automation, and operational excellence.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#7ceaff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "consulting"],
+  "shortcuts": [
+    {
+      "name": "Book a Call",
+      "url": "/#book-a-call",
+      "description": "Schedule a consultation"
+    },
+    {
+      "name": "Contact",
+      "url": "/#contact",
+      "description": "Get in touch"
+    }
+  ]
+}

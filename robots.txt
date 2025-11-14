@@ -1,0 +1,24 @@
+# Robots.txt for vahekhumaryan.com
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://vahekhumaryan.com/sitemap.xml
+
+# Crawl-delay (optional, for rate limiting)
+Crawl-delay: 1
+
+# Allow Google to crawl CSS and JS for proper rendering
+User-agent: Googlebot
+Allow: *.css
+Allow: *.js
+Allow: /assets/
+
+# Social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
