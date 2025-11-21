@@ -1,1523 +1,486 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vahe Khumaryan | Zendesk & AI Automation Consultant | Yerevan</title>
-    <meta name="description" content="Yerevan-based automation consultant specializing in Zendesk engineering, AI chatbots, and process optimization. Book a strategy call to transform your support operations today.">
-    <meta name="author" content="Vahe Khumaryan">
-    <meta name="keywords" content="business process automation, automation consultant, Zendesk consultant, customer support optimization, AI automation, process improvement, Yerevan consultant, Armenia business automation">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="language" content="English">
-    <meta name="geo.region" content="AM-ER">
-    <meta name="geo.placename" content="Yerevan">
-    <meta name="geo.position" content="40.1776;44.5126">
-    <link rel="canonical" href="https://vahe.space/">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:site_name" content="Vahe Khumaryan">
-    <meta property="og:url" content="https://vahe.space/">
-    <meta property="og:title" content="Vahe Khumaryan - Business Process & Automation Consultant">
-    <meta property="og:description" content="Partnering with customer support and operations teams to deliver automation, AI systems, and Zendesk excellence. Book a strategy call with Vahe Khumaryan.">
-    <meta property="og:image" content="https://vahe.space/assets/images/avatar.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Vahe Khumaryan - Business Process & Automation Consultant based in Yerevan">
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Vahe Khumaryan - Business Process & Automation Consultant">
-    <meta name="twitter:description" content="Partnering with customer support and operations teams to deliver automation, AI systems, and Zendesk excellence. Book a strategy call with Vahe Khumaryan.">
-    <meta name="twitter:image" content="https://vahe.space/assets/images/avatar.jpg">
-    <meta name="twitter:image:alt" content="Vahe Khumaryan - Automation Consultant">
-
-    <!-- Theme & Mobile App Meta Tags -->
-    <meta name="theme-color" content="#050505">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Vahe Khumaryan">
-    <meta name="format-detection" content="telephone=yes, address=yes, email=yes">
-
-    <!-- Favicon and App Icons -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
-    <link rel="manifest" href="/site.webmanifest">
-
-    <!-- Resource Hints for Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="dns-prefetch" href="https://calendar.google.com">
-    <link rel="dns-prefetch" href="https://platform.linkedin.com">
-
-    <!-- Optimized Font Loading -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet"></noscript>
-
-    <!-- Deferred Calendar CSS -->
-    <link rel="preload" href="https://calendar.google.com/calendar/scheduling-button-script.css" as="style" onload="this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://calendar.google.com/calendar/scheduling-button-script.css"></noscript>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7YZ52CZ61"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-S7YZ52CZ61');
-    </script>
-    <style>
-        :root {
-            color-scheme: dark;
-            --page-bg: #050505;
-            --surface: #0b0b0c;
-            --surface-raised: #111113;
-            --text: #f5f5f5;
-            --text-muted: #c5c5c8;
-            --accent: #7ceaff;
-            --accent-soft: rgba(124, 234, 255, 0.14);
-            --border: rgba(255, 255, 255, 0.06);
-            --shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
-            --radius-lg: 28px;
-            --radius-sm: 12px;
-            font-size: 16px;
-        }
-
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            background: var(--page-bg);
-            color: var(--text);
-            font-family: 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.65;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            position: relative;
-        }
-
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background:
-                radial-gradient(circle at 1px 1px, rgba(124, 234, 255, 0.15) 1px, transparent 0);
-            background-size: 40px 40px;
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0.4;
-        }
-
-        body::after {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background: radial-gradient(1200px 600px at top right, rgba(124, 234, 255, 0.08), transparent 60%),
-                        radial-gradient(900px 480px at bottom left, rgba(255, 255, 255, 0.04), transparent 55%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        #mouse-spotlight {
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(124, 234, 255, 0.08) 0%, transparent 70%);
-            pointer-events: none;
-            z-index: 1;
-            transform: translate(-50%, -50%);
-            transition: opacity 0.3s ease;
-            opacity: 0;
-        }
-
-        #hero-canvas {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: auto;
-        }
-
-        .hero {
-            position: relative;
-        }
-
-        .hero__copy,
-        .hero__meta {
-            position: relative;
-            z-index: 1;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        a:hover,
-        a:focus-visible {
-            color: var(--accent);
-        }
-
-        /* Enhanced Focus Indicators for Accessibility */
-        *:focus-visible {
-            outline: 3px solid var(--accent);
-            outline-offset: 3px;
-        }
-
-        .button:focus-visible {
-            outline: 3px solid var(--accent);
-            outline-offset: 4px;
-        }
-
-        .button--primary:focus-visible {
-            outline-color: #fff;
-        }
-
-        nav a:focus-visible {
-            outline: 2px solid var(--accent);
-            outline-offset: 4px;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-
-        .page {
-            width: min(1180px, 100%);
-            padding: clamp(2.5rem, 4vw, 4rem) clamp(1.8rem, 5vw, 4rem);
-            position: relative;
-            z-index: 1;
-        }
-
-        .skip-link {
-            position: absolute;
-            top: -48px;
-            left: 16px;
-            padding: 0.75rem 1.25rem;
-            background: var(--surface);
-            border-radius: var(--radius-sm);
-            box-shadow: var(--shadow);
-            transition: top 0.3s ease;
-            color: var(--text);
-            font-weight: 600;
-        }
-
-        .skip-link:focus {
-            top: 16px;
-        }
-
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: clamp(1.5rem, 3vw, 2.5rem);
-            padding-bottom: clamp(2rem, 6vw, 3rem);
-            border-bottom: 1px solid var(--border);
-            margin-bottom: clamp(2.5rem, 7vw, 4.5rem);
-        }
-
-        .brand {
-            display: grid;
-            gap: 0.35rem;
-        }
-
-        .brand__tagline {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            color: var(--text-muted);
-            font-family: 'IBM Plex Mono', 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
-        }
-
-        .brand__name {
-            font-size: clamp(1.65rem, 3.5vw, 2rem);
-            font-weight: 600;
-        }
-
-        nav ul {
-            display: flex;
-            align-items: center;
-            gap: clamp(1rem, 2.4vw, 1.6rem);
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            font-size: 0.95rem;
-        }
-
-        nav a {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            padding-bottom: 0.2rem;
-            border-bottom: 1px solid transparent;
-            white-space: nowrap;
-        }
-
-        nav a:hover,
-        nav a:focus-visible {
-            border-color: var(--accent);
-        }
-
-        .header-cta {
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.35rem;
-            padding: 0.5rem 0.9rem;
-            border-radius: 999px;
-            border: 1px solid var(--border);
-            font-weight: 500;
-            transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-            font-size: 0.85rem;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .button--primary {
-            background: linear-gradient(135deg, var(--accent) 0%, #5dd4ed 100%);
-            color: #0a1013;
-            border-color: transparent;
-            font-weight: 600;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            isolation: isolate;
-        }
-
-        .button--primary::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, #5dd4ed 0%, var(--accent) 100%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: -1;
-        }
-
-        .button--primary:hover::before {
-            opacity: 1;
-        }
-
-        .button--primary:hover,
-        .button--primary:focus-visible {
-            transform: translateY(-2px);
-            box-shadow:
-                0 20px 40px rgba(124, 234, 255, 0.3),
-                0 0 20px rgba(124, 234, 255, 0.2);
-            color: #0a1013;
-        }
-
-        .button--ghost {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(10px);
-            overflow: hidden;
-            isolation: isolate;
-        }
-
-        .button--ghost::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(124, 234, 255, 0.1), rgba(124, 234, 255, 0.05));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: -1;
-        }
-
-        .button--ghost:hover::before {
-            opacity: 1;
-        }
-
-        .button--ghost:hover,
-        .button--ghost:focus-visible {
-            border-color: var(--accent);
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(124, 234, 255, 0.15);
-        }
-
-        main {
-            display: grid;
-            gap: clamp(3rem, 7vw, 4.5rem);
-        }
-
-        .hero {
-            display: grid;
-            gap: clamp(2rem, 6vw, 3rem);
-            grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
-        }
-
-        .hero__copy {
-            display: grid;
-            gap: 1.4rem;
-        }
-
-        .hero__eyebrow {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.24em;
-            color: var(--text-muted);
-            font-family: 'IBM Plex Mono', 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
-        }
-
-        .hero__title {
-            font-size: clamp(2.4rem, 7vw, 3.4rem);
-            line-height: 1.15;
-            letter-spacing: -0.02em;
-            margin: 0;
-            background: linear-gradient(135deg, var(--text) 30%, var(--accent) 50%, var(--text) 70%);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: shimmer 3s linear infinite;
-        }
-
-        @keyframes shimmer {
-            0% { background-position: 0% center; }
-            100% { background-position: 200% center; }
-        }
-
-        .hero__body {
-            max-width: 56ch;
-            color: rgba(245, 245, 245, 0.88);
-            font-size: 1.05rem;
-        }
-
-        .hero__actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
-        .hero__meta {
-            display: grid;
-            gap: 1.25rem;
-        }
-
-        .stat-block {
-            display: grid;
-            gap: 0.9rem;
-            padding: 1.6rem;
-            border-radius: var(--radius-lg);
-            background: var(--surface);
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow);
-        }
-
-        .stat-block dl {
-            display: grid;
-            gap: 1.25rem;
-            margin: 0;
-        }
-
-        .stat-block dt {
-            font-size: 0.78rem;
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            color: var(--text-muted);
-        }
-
-        .stat-block dd {
-            margin: 0;
-            font-weight: 600;
-            font-size: 1.1rem;
-            letter-spacing: 0.01em;
-        }
-
-        .widget {
-            padding: 1rem;
-            border-radius: var(--radius-sm);
-            background: linear-gradient(135deg, var(--surface-raised) 0%, rgba(17, 17, 19, 0.8) 100%);
-            border: 2px solid transparent;
-            background-clip: padding-box;
-            display: grid;
-            gap: 0.5rem;
-            box-shadow:
-                0 0 0 1px rgba(124, 234, 255, 0.2),
-                0 8px 24px rgba(0, 0, 0, 0.4),
-                inset 0 1px 0 rgba(124, 234, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .widget::before {
-            content: "";
-            position: absolute;
-            inset: -2px;
-            background: linear-gradient(45deg,
-                var(--accent) 0%,
-                rgba(124, 234, 255, 0.5) 25%,
-                transparent 50%,
-                rgba(124, 234, 255, 0.5) 75%,
-                var(--accent) 100%);
-            background-size: 200% 200%;
-            border-radius: var(--radius-sm);
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            animation: borderGlow 3s ease infinite;
-        }
-
-        .widget:hover::before {
-            opacity: 0.6;
-        }
-
-        .widget::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(124, 234, 255, 0.1), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .widget:hover::after {
-            left: 100%;
-        }
-
-        @keyframes borderGlow {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .widget__title {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.22em;
-            color: var(--accent);
-            margin: 0;
-            text-shadow: 0 0 10px rgba(124, 234, 255, 0.3);
-        }
-
-        .widget__body {
-            font-size: 0.88rem;
-            color: rgba(245, 245, 245, 0.85);
-            line-height: 1.5;
-        }
-
-        .section {
-            display: grid;
-            gap: clamp(1.6rem, 4vw, 2.6rem);
-        }
-
-        .section__header {
-            display: grid;
-            gap: 0.5rem;
-        }
-
-        .section__eyebrow {
-            font-size: 0.85rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            font-family: 'IBM Plex Mono', 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
-        }
-
-        .section__title {
-            font-size: clamp(1.8rem, 4vw, 2.4rem);
-            margin: 0;
-            background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .card-grid {
-            display: grid;
-            gap: clamp(1.2rem, 4vw, 1.8rem);
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        }
-
-        .card {
-            padding: clamp(1.6rem, 4vw, 2rem);
-            border-radius: var(--radius-lg);
-            background: var(--surface);
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow);
-            display: grid;
-            gap: 0.85rem;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .card::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            border-radius: var(--radius-lg);
-            padding: 1px;
-            background: linear-gradient(135deg, transparent, rgba(124, 234, 255, 0.3), transparent);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(124, 234, 255, 0.3);
-            box-shadow:
-                var(--shadow),
-                0 0 20px rgba(124, 234, 255, 0.15);
-        }
-
-        .card:hover::before {
-            opacity: 1;
-        }
-
-        .card h3 {
-            margin: 0;
-            font-size: 1.2rem;
-        }
-
-        .card ul {
-            margin: 0;
-            padding-left: 1.1rem;
-            display: grid;
-            gap: 0.4rem;
-            color: rgba(245, 245, 245, 0.88);
-        }
-
-        .process {
-            counter-reset: step;
-            display: grid;
-            gap: 1.2rem;
-        }
-
-        .process li {
-            list-style: none;
-            padding: 1.4rem 1.6rem 1.4rem 3.4rem;
-            position: relative;
-            background: var(--surface);
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow);
-        }
-
-        .process li::before {
-            counter-increment: step;
-            content: counter(step, decimal-leading-zero);
-            position: absolute;
-            left: 1.3rem;
-            top: 50%;
-            transform: translateY(-50%);
-            font-family: 'IBM Plex Mono', 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
-            font-size: 0.8rem;
-            letter-spacing: 0.14em;
-            color: var(--accent);
-        }
-
-        .calendar {
-            display: grid;
-            gap: 1.1rem;
-            padding: clamp(1.6rem, 4vw, 2rem);
-            background: var(--surface-raised);
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow);
-        }
-
-        .calendar__copy {
-            color: rgba(245, 245, 245, 0.8);
-        }
-
-        .contact-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-        }
-
-        footer {
-            border-top: 1px solid var(--border);
-            padding-top: clamp(1.8rem, 4vw, 2.6rem);
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        footer ul {
-            display: flex;
-            gap: 1rem;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        footer a {
-            color: var(--text-muted);
-        }
-
-        footer a:hover,
-        footer a:focus-visible {
-            color: var(--accent);
-        }
-
-        /* Reduced Motion Support for Accessibility */
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
-
-            #hero-canvas,
-            #mouse-spotlight {
-                display: none;
-            }
-
-            .hero__title {
-                animation: none;
-                background: var(--text);
-                -webkit-text-fill-color: var(--text);
-            }
-
-            .widget::before,
-            .widget::after {
-                animation: none;
-                transition: none;
-            }
-        }
-
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 2rem;
-        }
-
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--accent);
-            color: #0a1013;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(124, 234, 255, 0.3);
-            transition: all 0.3s ease;
-            z-index: 999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(124, 234, 255, 0.4);
-        }
-
-        .back-to-top:active {
-            transform: translateY(-2px);
-        }
-
-        /* Sticky CTA Bar */
-        .sticky-cta {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: var(--surface);
-            border-top: 1px solid var(--border);
-            padding: 1rem;
-            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .sticky-cta:not([hidden]) {
-            transform: translateY(0);
-        }
-
-        .sticky-cta__content {
-            max-width: 1180px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-        }
-
-        .sticky-cta__text {
-            font-weight: 500;
-        }
-
-        .button--small {
-            padding: 0.5rem 1rem;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 1024px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .header-cta {
-                width: 100%;
-            }
-
-            .header-cta .button {
-                flex: 1 1 auto;
-                justify-content: center;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: flex-start;
-            }
-
-            .hero {
-                grid-template-columns: 1fr;
-            }
-
-            #hero-canvas {
-                opacity: 0.4;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .page {
-                padding: 1.8rem 1.25rem 3rem;
-            }
-
-            header {
-                gap: 1.2rem;
-            }
-
-            .hero__actions {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .process li {
-                padding-left: 2.8rem;
-            }
-
-            footer {
-                align-items: flex-start;
-            }
-
-            footer ul {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            #hero-canvas {
-                opacity: 0.3;
-            }
-
-            #mouse-spotlight {
-                width: 400px;
-                height: 400px;
-            }
-
-            .sticky-cta__content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .button--small {
-                width: 100%;
-            }
-        }
-    </style>
-    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" defer></script>
-    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vahe Khumaryan | Zendesk & AI Automation Consultant | Yerevan</title>
+  <meta name="description"
+    content="Yerevan-based automation consultant specializing in Zendesk engineering, AI chatbots, and process optimization. Book a strategy call to transform your support operations today.">
+  <meta name="author" content="Vahe Khumaryan">
+  <meta name="keywords"
+    content="business process automation, automation consultant, Zendesk consultant, customer support optimization, AI automation, process improvement, Yerevan consultant, Armenia business automation">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="language" content="English">
+  <meta name="geo.region" content="AM-ER">
+  <meta name="geo.placename" content="Yerevan">
+  <meta name="geo.position" content="40.1776;44.5126">
+  <link rel="canonical" href="https://vahe.space/">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Vahe Khumaryan">
+  <meta property="og:url" content="https://vahe.space/">
+  <meta property="og:title" content="Vahe Khumaryan - Business Process & Automation Consultant">
+  <meta property="og:description"
+    content="Partnering with customer support and operations teams to deliver automation, AI systems, and Zendesk excellence. Book a strategy call with Vahe Khumaryan.">
+  <meta property="og:image" content="https://vahe.space/assets/images/avatar.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Vahe Khumaryan - Business Process & Automation Consultant based in Yerevan">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vahe Khumaryan - Business Process & Automation Consultant">
+  <meta name="twitter:description"
+    content="Partnering with customer support and operations teams to deliver automation, AI systems, and Zendesk excellence. Book a strategy call with Vahe Khumaryan.">
+  <meta name="twitter:image" content="https://vahe.space/assets/images/avatar.jpg">
+  <meta name="twitter:image:alt" content="Vahe Khumaryan - Automation Consultant">
+
+  <!-- Theme & Mobile App Meta Tags -->
+  <meta name="theme-color" content="#050505">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Vahe Khumaryan">
+  <meta name="format-detection" content="telephone=yes, address=yes, email=yes">
+
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Resource Hints for Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="https://calendar.google.com">
+  <link rel="dns-prefetch" href="https://platform.linkedin.com">
+
+  <!-- Optimized Font Loading -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap"
+      rel="stylesheet">
+  </noscript>
+
+  <!-- Deferred Calendar CSS -->
+  <link rel="preload" href="https://calendar.google.com/calendar/scheduling-button-script.css" as="style"
+    onload="this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://calendar.google.com/calendar/scheduling-button-script.css">
+  </noscript>
+
+  <!-- LinkedIn Profile Badge Script -->
+  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7YZ52CZ61"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-S7YZ52CZ61');
+  </script>
 </head>
+
 <body>
-    <div id="mouse-spotlight"></div>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="mouse-spotlight"></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top" aria-label="Back to top" hidden>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="18 15 12 9 6 15"></polyline>
-        </svg>
-    </button>
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top" hidden>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
 
-    <!-- Sticky CTA Bar -->
-    <div id="sticky-cta" class="sticky-cta" role="banner" aria-label="Quick action bar" hidden>
-        <div class="sticky-cta__content">
-            <span class="sticky-cta__text">Ready to automate your processes?</span>
-            <a href="#book-a-call" class="button button--primary button--small">Book a call</a>
+  <!-- Sticky CTA Bar -->
+  <div id="sticky-cta" class="sticky-cta" role="banner" aria-label="Quick action bar" hidden>
+    <div class="sticky-cta__content">
+      <span class="sticky-cta__text">Ready to automate your processes?</span>
+      <a href="#book-a-call" class="button button--primary button--small">Book a call</a>
+    </div>
+  </div>
+
+  <div class="page">
+    <header>
+      <div class="brand">
+        <span class="brand__tagline">Business Process &amp; Automation Consultant</span>
+        <span class="brand__name">Vahe Khumaryan</span>
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#focus">Expertise</a></li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#book-a-call">Book a call</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a class="button button--ghost" href="https://drive.google.com/file/d/1uI6aEdWY-mw9TwFfNvulCFdHkrB0pnPW/view"
+          target="_blank" rel="noopener">Download CV</a>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" aria-labelledby="hero-title">
+        <canvas id="hero-canvas" role="img"
+          aria-label="Animated 3D geometric shape illustrating modern technology"></canvas>
+        <div class="hero__copy">
+          <p class="hero__eyebrow">Based in Yerevan - modernising support and operations worldwide</p>
+          <h1 id="hero-title" class="hero__title">Business process consulting that fuses automation and customer support
+          </h1>
+          <p class="hero__body">I'm Vahe Khumaryan, Senior Manager of Creator Support at Picsart and founder of
+            DeployHelp.com. I partner with growth teams to redesign processes, wire up Zendesk and SaaS automations, and
+            launch AI-powered copilots that elevate both customer experience and operational efficiency.</p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#book-a-call">Book Free Strategy Call</a>
+            <a class="button button--ghost" href="mailto:vahevahevahe@gmail.com">Email Vahe</a>
+            <a class="button button--ghost" href="https://www.linkedin.com/in/contactvahe/" target="_blank"
+              rel="noopener">
+              LinkedIn
+              <span class="sr-only">(opens in new window)</span>
+            </a>
+          </div>
         </div>
-    </div>
-    <div class="page">
-        <header>
-            <div class="brand">
-                <span class="brand__tagline">Business Process &amp; Automation Consultant</span>
-                <span class="brand__name">Vahe Khumaryan</span>
+        <aside class="hero__meta" aria-label="Connect with Vahe">
+          <div class="widget">
+            <p class="widget__title">Also visit DeployHelp</p>
+            <p class="widget__body">Automation blueprints, Zendesk scripts, and AI resources for support leaders.</p>
+            <a class="button button--ghost" href="https://deployhelp.com" target="_blank" rel="noopener">
+              Open DeployHelp.com
+              <span class="sr-only">(opens in new window)</span>
+            </a>
+            <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark"
+              data-type="HORIZONTAL" data-vanity="contactvahe" data-version="v1">
+              <span class="sr-only">LinkedIn profile badge for Vahe Khumaryan</span>
             </div>
-            <nav aria-label="Primary">
-                <ul>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#focus">Expertise</a></li>
-                    <li><a href="#approach">Approach</a></li>
-                    <li><a href="#book-a-call">Book a call</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="header-cta">
-                <a class="button button--ghost" href="https://drive.google.com/file/d/1uI6aEdWY-mw9TwFfNvulCFdHkrB0pnPW/view" target="_blank" rel="noopener">Download CV</a>
-            </div>
-        </header>
+          </div>
+        </aside>
+      </section>
 
-        <main id="main-content">
-            <section class="hero" aria-labelledby="hero-title">
-                <canvas id="hero-canvas" role="img" aria-label="Animated 3D geometric shape illustrating modern technology"></canvas>
-                <div class="hero__copy">
-                    <p class="hero__eyebrow">Based in Yerevan - modernising support and operations worldwide</p>
-                    <h1 id="hero-title" class="hero__title">Business process consulting that fuses automation and customer support</h1>
-                    <p class="hero__body">I'm Vahe Khumaryan, Senior Manager of Creator Support at Picsart and founder of DeployHelp.com. I partner with growth teams to redesign processes, wire up Zendesk and SaaS automations, and launch AI-powered copilots that elevate both customer experience and operational efficiency.</p>
-                    <div class="hero__actions">
-                        <a class="button button--primary" href="#book-a-call">Book Free Strategy Call</a>
-                        <a class="button button--ghost" href="mailto:vahevahevahe@gmail.com">Email Vahe</a>
-                        <a class="button button--ghost" href="https://www.linkedin.com/in/contactvahe/" target="_blank" rel="noopener">
-                            LinkedIn
-                            <span class="sr-only">(opens in new window)</span>
-                        </a>
-                    </div>
-                </div>
-                <aside class="hero__meta" aria-label="Connect with Vahe">
-                    <div class="widget">
-                        <p class="widget__title">Also visit DeployHelp</p>
-                        <p class="widget__body">Automation blueprints, Zendesk scripts, and AI resources for support leaders.</p>
-                        <a class="button button--ghost" href="https://deployhelp.com" target="_blank" rel="noopener">
-                            Open DeployHelp.com
-                            <span class="sr-only">(opens in new window)</span>
-                        </a>
-                        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="HORIZONTAL" data-vanity="contactvahe" data-version="v1">
-                            <span class="sr-only">LinkedIn profile badge for Vahe Khumaryan</span>
-                        </div>
-                    </div>
-                </aside>
-            </section>
+      <section id="services" class="section" aria-labelledby="services-title">
+        <div class="section__header">
+          <p class="section__eyebrow">How I can help</p>
+          <h2 id="services-title" class="section__title">Business process consulting for automation-first support teams
+          </h2>
+          <p>I embed with CS, CX, and operations leaders to streamline processes, ship automation safely, and build
+            teams that thrive on data-driven improvement.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card" aria-labelledby="card-ops">
+            <h3 id="card-ops">Process &amp; service design leadership</h3>
+            <p>Align customer journeys, internal workflows, and organisational goals into one operating system.</p>
+            <ul>
+              <li>End-to-end journey mapping and SLA/KPI architecture</li>
+              <li>Knowledge, QA, and change governance for scaling support</li>
+              <li>Leadership coaching for customer support, IT, and ops managers</li>
+            </ul>
+          </article>
+          <article class="card" aria-labelledby="card-automation">
+            <h3 id="card-automation">Automation &amp; AI engineering</h3>
+            <p>Build the bots, integrations, and copilots that remove manual effort and empower agents.</p>
+            <ul>
+              <li>Zendesk, SaaS, and custom API orchestration</li>
+              <li>Chatbots, agent assist, and generative AI pilots with safety gating</li>
+              <li>Python, SQL, and low/no-code tooling for process automation</li>
+            </ul>
+          </article>
+          <article class="card" aria-labelledby="card-ai">
+            <h3 id="card-ai">Operational analytics &amp; enablement</h3>
+            <p>Turn data into decisions with instrumentation, experimentation, and team enablement.</p>
+            <ul>
+              <li>Health dashboards, forecasting models, and telemetry pipelines</li>
+              <li>Automation adoption metrics and CX/EX storytelling</li>
+              <li>Upskilling programs for analysts, agents, and business stakeholders</li>
+            </ul>
+          </article>
+        </div>
+      </section>
 
-            <section id="services" class="section" aria-labelledby="services-title">
-                <div class="section__header">
-                    <p class="section__eyebrow">How I can help</p>
-                    <h2 id="services-title" class="section__title">Business process consulting for automation-first support teams</h2>
-                    <p>I embed with CS, CX, and operations leaders to streamline processes, ship automation safely, and build teams that thrive on data-driven improvement.</p>
-                </div>
-                <div class="card-grid">
-                    <article class="card" aria-labelledby="card-ops">
-                        <h3 id="card-ops">Process &amp; service design leadership</h3>
-                        <p>Align customer journeys, internal workflows, and organisational goals into one operating system.</p>
-                        <ul>
-                            <li>End-to-end journey mapping and SLA/KPI architecture</li>
-                            <li>Knowledge, QA, and change governance for scaling support</li>
-                            <li>Leadership coaching for customer support, IT, and ops managers</li>
-                        </ul>
-                    </article>
-                    <article class="card" aria-labelledby="card-automation">
-                        <h3 id="card-automation">Automation &amp; AI engineering</h3>
-                        <p>Build the bots, integrations, and copilots that remove manual effort and empower agents.</p>
-                        <ul>
-                            <li>Zendesk, SaaS, and custom API orchestration</li>
-                            <li>Chatbots, agent assist, and generative AI pilots with safety gating</li>
-                            <li>Python, SQL, and low/no-code tooling for process automation</li>
-                        </ul>
-                    </article>
-                    <article class="card" aria-labelledby="card-ai">
-                        <h3 id="card-ai">Operational analytics &amp; enablement</h3>
-                        <p>Turn data into decisions with instrumentation, experimentation, and team enablement.</p>
-                        <ul>
-                            <li>Health dashboards, forecasting models, and telemetry pipelines</li>
-                            <li>Automation adoption metrics and CX/EX storytelling</li>
-                            <li>Upskilling programs for analysts, agents, and business stakeholders</li>
-                        </ul>
-                    </article>
-                </div>
-            </section>
+      <section id="focus" class="section" aria-labelledby="focus-title">
+        <div class="section__header">
+          <p class="section__eyebrow">What defines my work</p>
+          <h2 id="focus-title" class="section__title">Identity, expertise, and growth focus</h2>
+        </div>
+        <div class="card-grid">
+          <article class="card" aria-labelledby="card-identify">
+            <h3 id="card-identify">I identify as</h3>
+            <ul>
+              <li>Business Process Consultant</li>
+              <li>Automation &amp; Support Operations Leader</li>
+              <li>Zendesk &amp; CX Systems Architect</li>
+              <li>Solopreneur</li>
+              <li>AI Transformation Coach</li>
+            </ul>
+          </article>
+          <article class="card" aria-labelledby="card-experience">
+            <h3 id="card-experience">Extensive experience with</h3>
+            <ul>
+              <li>Customer support operations &amp; workforce design</li>
+              <li>Business process automation (BPA) &amp; integration hubs</li>
+              <li>Zendesk administration, routing, and reporting</li>
+              <li>Chatbots, agent assist, and generative AI deployment</li>
+              <li>Python, SQL, and low-code automation stacks</li>
+              <li>Knowledge, QA, and enablement programmes</li>
+              <li>Data quality, telemetry, and experimentation</li>
+            </ul>
+          </article>
+          <article class="card" aria-labelledby="card-growth">
+            <h3 id="card-growth">Eager to grow as</h3>
+            <ul>
+              <li>Director of Business Process &amp; Automation</li>
+              <li>Customer Support or CX Executive</li>
+              <li>Head of Digital Transformation</li>
+              <li>Head of AI Transformation</li>
+            </ul>
+          </article>
+        </div>
+      </section>
 
-            <section id="focus" class="section" aria-labelledby="focus-title">
-                <div class="section__header">
-                    <p class="section__eyebrow">What defines my work</p>
-                    <h2 id="focus-title" class="section__title">Identity, expertise, and growth focus</h2>
-                </div>
-                <div class="card-grid">
-                    <article class="card" aria-labelledby="card-identify">
-                        <h3 id="card-identify">I identify as</h3>
-                        <ul>
-                            <li>Business Process Consultant</li>
-                            <li>Automation &amp; Support Operations Leader</li>
-                            <li>Zendesk &amp; CX Systems Architect</li>
-                            <li>Solopreneur</li>
-                            <li>AI Transformation Coach</li>
-                        </ul>
-                    </article>
-                    <article class="card" aria-labelledby="card-experience">
-                        <h3 id="card-experience">Extensive experience with</h3>
-                        <ul>
-                            <li>Customer support operations &amp; workforce design</li>
-                            <li>Business process automation (BPA) &amp; integration hubs</li>
-                            <li>Zendesk administration, routing, and reporting</li>
-                            <li>Chatbots, agent assist, and generative AI deployment</li>
-                            <li>Python, SQL, and low-code automation stacks</li>
-                            <li>Knowledge, QA, and enablement programmes</li>
-                            <li>Data quality, telemetry, and experimentation</li>
-                        </ul>
-                    </article>
-                    <article class="card" aria-labelledby="card-growth">
-                        <h3 id="card-growth">Eager to grow as</h3>
-                        <ul>
-                            <li>Director of Business Process &amp; Automation</li>
-                            <li>Customer Support or CX Executive</li>
-                            <li>Head of Digital Transformation</li>
-                            <li>Head of AI Transformation</li>
-                        </ul>
-                    </article>
-                </div>
-            </section>
+      <section id="approach" class="section" aria-labelledby="approach-title">
+        <div class="section__header">
+          <p class="section__eyebrow">Engagement model</p>
+          <h2 id="approach-title" class="section__title">Automation transformation without the burnout</h2>
+          <p>We partner on the full lifecycle: discovery, design, build, and adoption. Every sprint blends analytics, AI
+            readiness, and change enablement so automation lands with measurable value.</p>
+        </div>
+        <ol class="process">
+          <li>
+            <strong>Systems &amp; signal assessment</strong>
+            Deep-dive into workflows, data trails, tooling, and team sentiment. Expect a heatmap of quick wins and
+            critical gaps within the first week.
+          </li>
+          <li>
+            <strong>Automation &amp; AI roadmap</strong>
+            Prioritised initiatives with effort, impact, ownership, and safety gates mapped to budget and strategic
+            goals.
+          </li>
+          <li>
+            <strong>Build with enablement</strong>
+            I configure platforms, ship scripts and bots, and coach practitioners so the new workflows stick.
+          </li>
+          <li>
+            <strong>Insights &amp; iteration</strong>
+            Dashboards, experiments, and retros keep stakeholders aligned and unlock the next wave of automation
+            opportunities.
+          </li>
+        </ol>
+      </section>
 
-            <section id="approach" class="section" aria-labelledby="approach-title">
-                <div class="section__header">
-                    <p class="section__eyebrow">Engagement model</p>
-                    <h2 id="approach-title" class="section__title">Automation transformation without the burnout</h2>
-                    <p>We partner on the full lifecycle: discovery, design, build, and adoption. Every sprint blends analytics, AI readiness, and change enablement so automation lands with measurable value.</p>
-                </div>
-                <ol class="process">
-                    <li>
-                        <strong>Systems &amp; signal assessment</strong><br>
-                        Deep-dive into workflows, data trails, tooling, and team sentiment. Expect a heatmap of quick wins and critical gaps within the first week.
-                    </li>
-                    <li>
-                        <strong>Automation &amp; AI roadmap</strong><br>
-                        Prioritised initiatives with effort, impact, ownership, and safety gates mapped to budget and strategic goals.
-                    </li>
-                    <li>
-                        <strong>Build with enablement</strong><br>
-                        I configure platforms, ship scripts and bots, and coach practitioners so the new workflows stick.
-                    </li>
-                    <li>
-                        <strong>Insights &amp; iteration</strong><br>
-                        Dashboards, experiments, and retros keep stakeholders aligned and unlock the next wave of automation opportunities.
-                    </li>
-                </ol>
-            </section>
+      <section id="book-a-call" class="section" aria-labelledby="book-title">
+        <div class="section__header">
+          <p class="section__eyebrow">Get started</p>
+          <h2 id="book-title" class="section__title">Book a 45-minute business process strategy session</h2>
+          <p class="calendar__copy">Bring your highest-friction workflow and we will map automation, customer support,
+            and tooling levers you can activate within the next sprint.</p>
+        </div>
+        <div class="calendar" role="region" aria-live="polite">
+          <div id="calendar-button"></div>
+        </div>
+      </section>
 
-            <section id="book-a-call" class="section" aria-labelledby="book-title">
-                <div class="section__header">
-                    <p class="section__eyebrow">Get started</p>
-                    <h2 id="book-title" class="section__title">Book a 45-minute business process strategy session</h2>
-                    <p class="calendar__copy">Bring your highest-friction workflow and we will map automation, customer support, and tooling levers you can activate within the next sprint.</p>
-                </div>
-                <div class="calendar" role="region" aria-live="polite">
-                    <div id="calendar-button"></div>
-                </div>
-            </section>
+      <section id="contact" class="section" aria-labelledby="contact-title">
+        <div class="section__header">
+          <p class="section__eyebrow">Stay in touch</p>
+          <h2 id="contact-title" class="section__title">Open to consulting, fractional leadership, and advisory roles
+          </h2>
+          <p>Prefer async collaboration? Ping me on any channel below for automation, AI, and operations conversations.
+            I typically reply within one business day.</p>
+        </div>
+        <div class="contact-links">
+          <a class="button button--ghost" href="mailto:vahevahevahe@gmail.com">Email</a>
+          <a class="button button--ghost" href="https://t.me/contactvahe" target="_blank" rel="noopener">
+            Telegram
+            <span class="sr-only">(opens in new window)</span>
+          </a>
+          <a class="button button--ghost" href="https://www.linkedin.com/in/contactvahe/" target="_blank"
+            rel="noopener">
+            LinkedIn
+            <span class="sr-only">(opens in new window)</span>
+          </a>
+          <a class="button button--ghost" href="https://deployhelp.com" target="_blank" rel="noopener">
+            DeployHelp
+            <span class="sr-only">(opens in new window)</span>
+          </a>
+        </div>
+      </section>
+    </main>
 
-            <section id="contact" class="section" aria-labelledby="contact-title">
-                <div class="section__header">
-                    <p class="section__eyebrow">Stay in touch</p>
-                    <h2 id="contact-title" class="section__title">Open to consulting, fractional leadership, and advisory roles</h2>
-                    <p>Prefer async collaboration? Ping me on any channel below for automation, AI, and operations conversations. I typically reply within one business day.</p>
-                </div>
-                <div class="contact-links">
-                    <a class="button button--ghost" href="mailto:vahevahevahe@gmail.com">Email</a>
-                    <a class="button button--ghost" href="https://t.me/contactvahe" target="_blank" rel="noopener">
-                        Telegram
-                        <span class="sr-only">(opens in new window)</span>
-                    </a>
-                    <a class="button button--ghost" href="https://www.linkedin.com/in/contactvahe/" target="_blank" rel="noopener">
-                        LinkedIn
-                        <span class="sr-only">(opens in new window)</span>
-                    </a>
-                    <a class="button button--ghost" href="https://deployhelp.com" target="_blank" rel="noopener">
-                        DeployHelp
-                        <span class="sr-only">(opens in new window)</span>
-                    </a>
-                </div>
-            </section>
-        </main>
+    <footer>
+      <p>&copy; <span id="current-year"></span> Vahe Khumaryan. Crafted with intent in Yerevan.</p>
+    </footer>
+  </div>
 
-        <footer>
-            <p>&copy; <span id="current-year"></span> Vahe Khumaryan. Crafted with intent in Yerevan.</p>
-        </footer>
-    </div>
+  <!-- Scripts -->
+  <script src="https://calendar.google.com/calendar/scheduling-button-script.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="assets/js/main.js"></script>
 
-    <script>
-        // Service Worker Registration for PWA
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(registration => console.log('SW registered:', registration))
-                    .catch(error => console.log('SW registration failed:', error));
-            });
-        }
-
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // Back to Top Button
-        const backToTop = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 500) {
-                backToTop.hidden = false;
-            } else {
-                backToTop.hidden = true;
-            }
-        });
-
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Sticky CTA on Scroll
-        let lastScrollY = window.scrollY;
-        const stickyCTA = document.getElementById('sticky-cta');
-        const heroSection = document.querySelector('.hero');
-
-        window.addEventListener('scroll', () => {
-            const heroBottom = heroSection.getBoundingClientRect().bottom;
-            const isScrollingDown = window.scrollY > lastScrollY;
-
-            if (heroBottom < 0 && isScrollingDown) {
-                stickyCTA.hidden = false;
-            } else if (window.scrollY < 100) {
-                stickyCTA.hidden = true;
-            }
-
-            lastScrollY = window.scrollY;
-        });
-
-        // Hide sticky CTA when user reaches booking section
-        const bookingSection = document.getElementById('book-a-call');
-        const stickyObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    stickyCTA.hidden = true;
-                }
-            });
-        }, { threshold: 0.5 });
-
-        if (bookingSection) {
-            stickyObserver.observe(bookingSection);
-        }
-
-        // Mouse spotlight effect
-        (function() {
-            const spotlight = document.getElementById('mouse-spotlight');
-            let mouseX = 0;
-            let mouseY = 0;
-            let currentX = 0;
-            let currentY = 0;
-
-            document.addEventListener('mousemove', (e) => {
-                mouseX = e.clientX;
-                mouseY = e.clientY;
-                spotlight.style.opacity = '1';
-            });
-
-            document.addEventListener('mouseleave', () => {
-                spotlight.style.opacity = '0';
-            });
-
-            function updateSpotlight() {
-                currentX += (mouseX - currentX) * 0.1;
-                currentY += (mouseY - currentY) * 0.1;
-                spotlight.style.left = currentX + 'px';
-                spotlight.style.top = currentY + 'px';
-                requestAnimationFrame(updateSpotlight);
-            }
-
-            updateSpotlight();
-        })();
-
-        window.addEventListener('load', function () {
-            const target = document.getElementById('calendar-button');
-
-            // Set timeout to show fallback if calendar doesn't load
-            const fallbackTimeout = setTimeout(() => {
-                if (target && target.children.length === 0) {
-                    target.innerHTML = `
-                        <div style="padding: 1.5rem; background: var(--surface); border-radius: var(--radius-sm); text-align: center;">
-                            <p style="margin-bottom: 1rem; color: var(--text-muted);">Calendar widget couldn't load.</p>
-                            <a href="mailto:vahevahevahe@gmail.com?subject=Book a Strategy Call" class="button button--primary">
-                                Email to book a call
-                            </a>
-                        </div>
-                    `;
-                }
-            }, 5000);
-
-            if (window.calendar && window.calendar.schedulingButton) {
-                clearTimeout(fallbackTimeout);
-                calendar.schedulingButton.load({
-                    url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2iVtjuv1amu_Ez6lvKqkXq9PPpnccskOue3zxN2maVGsMWctIDSFgDeCxmkw2E8yKMtH6jTHHo?gv=true',
-                    color: '#7ceaff',
-                    label: 'Book a strategy call',
-                    target
-                });
-            }
-        });
-    </script>
-    <script>
-        // Three.js Hero 3D Animation
-        (function() {
-            'use strict';
-
-            // Color scheme from CSS variables
-            const ACCENT_COLOR = 0x7ceaff;
-
-            // ===== HERO 3D INTERACTIVE ELEMENT =====
-            function initHeroScene() {
-                const canvas = document.getElementById('hero-canvas');
-                if (!canvas) return;
-
-                const hero = document.querySelector('.hero');
-                const heroRect = hero.getBoundingClientRect();
-
-                const scene = new THREE.Scene();
-                const camera = new THREE.PerspectiveCamera(75, heroRect.width / heroRect.height, 0.1, 1000);
-                const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-
-                renderer.setSize(heroRect.width, heroRect.height);
-                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-                camera.position.z = 5;
-
-                // Create abstract geometric shape (torus knot)
-                const geometry = new THREE.TorusKnotGeometry(1.5, 0.4, 150, 20, 2, 3);
-
-                // Wireframe material with cyan color
-                const material = new THREE.MeshBasicMaterial({
-                    color: ACCENT_COLOR,
-                    wireframe: true,
-                    transparent: true,
-                    opacity: 0.4
-                });
-
-                const torusKnot = new THREE.Mesh(geometry, material);
-                scene.add(torusKnot);
-
-                // Add glow effect with a solid version
-                const glowGeometry = geometry.clone();
-                const glowMaterial = new THREE.MeshBasicMaterial({
-                    color: ACCENT_COLOR,
-                    transparent: true,
-                    opacity: 0.08,
-                    side: THREE.DoubleSide
-                });
-                const glow = new THREE.Mesh(glowGeometry, glowMaterial);
-                glow.scale.set(1.05, 1.05, 1.05);
-                scene.add(glow);
-
-                // Add particles around the shape
-                const particleGeometry = new THREE.BufferGeometry();
-                const particleCount = 200;
-                const particlePositions = new Float32Array(particleCount * 3);
-
-                for (let i = 0; i < particleCount; i++) {
-                    const i3 = i * 3;
-                    const radius = 3;
-                    particlePositions[i3] = (Math.random() - 0.5) * radius;
-                    particlePositions[i3 + 1] = (Math.random() - 0.5) * radius;
-                    particlePositions[i3 + 2] = (Math.random() - 0.5) * radius;
-                }
-
-                particleGeometry.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
-
-                const particleMaterial = new THREE.PointsMaterial({
-                    color: ACCENT_COLOR,
-                    size: 0.05,
-                    transparent: true,
-                    opacity: 0.6,
-                    blending: THREE.AdditiveBlending
-                });
-
-                const particleSystem = new THREE.Points(particleGeometry, particleMaterial);
-                scene.add(particleSystem);
-
-                // Mouse interaction
-                const mouse = { x: 0, y: 0 };
-                let targetRotationX = 0;
-                let targetRotationY = 0;
-
-                canvas.addEventListener('mousemove', (e) => {
-                    const rect = canvas.getBoundingClientRect();
-                    mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-                    mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
-
-                    targetRotationY = mouse.x * Math.PI * 0.3;
-                    targetRotationX = mouse.y * Math.PI * 0.3;
-                });
-
-                // Scroll-based animation
-                let scrollY = 0;
-                window.addEventListener('scroll', () => {
-                    scrollY = window.scrollY;
-                });
-
-                // Animation loop with performance optimizations
-                let time = 0;
-                let isAnimating = true;
-
-                // Pause animation when tab is hidden
-                document.addEventListener('visibilitychange', () => {
-                    isAnimating = !document.hidden;
-                    if (isAnimating) animate(performance.now());
-                });
-
-                // Pause when hero section is off-screen
-                const canvasObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        isAnimating = entry.isIntersecting && !document.hidden;
-                        if (isAnimating) animate(performance.now());
-                    });
-                }, { threshold: 0 });
-
-                canvasObserver.observe(canvas);
-
-                function animate(timestamp) {
-                    if (!isAnimating) return;
-
-                    requestAnimationFrame(animate);
-
-                    time += 0.01;
-
-                    // Auto-rotation
-                    torusKnot.rotation.x += 0.005;
-                    torusKnot.rotation.y += 0.003;
-
-                    // Apply mouse influence
-                    torusKnot.rotation.x += (targetRotationX - torusKnot.rotation.x) * 0.05;
-                    torusKnot.rotation.y += (targetRotationY - torusKnot.rotation.y) * 0.05;
-
-                    // Sync glow with main object
-                    glow.rotation.copy(torusKnot.rotation);
-
-                    // Rotate particle system
-                    particleSystem.rotation.y = time * 0.5;
-                    particleSystem.rotation.x = Math.sin(time * 0.3) * 0.2;
-
-                    // Pulse effect
-                    const scale = 1 + Math.sin(time * 2) * 0.05;
-                    torusKnot.scale.set(scale, scale, scale);
-
-                    // Scroll-based position shift
-                    const scrollOffset = Math.min(scrollY * 0.002, 2);
-                    torusKnot.position.y = -scrollOffset;
-                    particleSystem.position.y = -scrollOffset;
-                    glow.position.y = -scrollOffset;
-
-                    renderer.render(scene, camera);
-                }
-
-                animate(0);
-
-                // Handle window resize
-                function onResize() {
-                    const heroRect = hero.getBoundingClientRect();
-                    camera.aspect = heroRect.width / heroRect.height;
-                    camera.updateProjectionMatrix();
-                    renderer.setSize(heroRect.width, heroRect.height);
-                }
-
-                window.addEventListener('resize', onResize);
-            }
-
-            // Initialize when DOM is ready
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initHeroScene);
-            } else {
-                initHeroScene();
-            }
-        })();
-    </script>
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
+  <script type="application/ld+json">
     {
-      "@type": ["Person", "ConsultingBusiness"],
-      "@id": "https://vahe.space/#person",
-      "name": "Vahe Khumaryan",
-      "givenName": "Vahe",
-      "familyName": "Khumaryan",
-      "jobTitle": "Business Process & Automation Consultant",
-      "description": "Senior Manager of Creator Support at Picsart and founder of DeployHelp.com. Specializes in business process redesign, intelligent automation, Zendesk engineering, and AI-assisted customer support operations for growth teams worldwide.",
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://vahe.space/assets/images/avatar.jpg",
-        "width": "800",
-        "height": "800"
-      },
-      "url": "https://vahe.space/",
-      "email": "vahevahevahe@gmail.com",
-      "sameAs": [
-        "https://www.linkedin.com/in/contactvahe/",
-        "https://deployhelp.com",
-        "https://t.me/contactvahe"
-      ],
-      "worksFor": [
+      "@context": "https://schema.org",
+      "@graph": [
         {
-          "@type": "Organization",
-          "@id": "https://picsart.com/#organization",
-          "name": "Picsart",
-          "url": "https://picsart.com"
+          "@type": ["Person", "ConsultingBusiness"],
+          "@id": "https://vahe.space/#person",
+          "name": "Vahe Khumaryan",
+          "givenName": "Vahe",
+          "familyName": "Khumaryan",
+          "jobTitle": "Business Process & Automation Consultant",
+          "description": "Senior Manager of Creator Support at Picsart and founder of DeployHelp.com. Specializes in business process redesign, intelligent automation, Zendesk engineering, and AI-assisted customer support operations for growth teams worldwide.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://vahe.space/assets/images/avatar.jpg",
+            "width": "800",
+            "height": "800"
+          },
+          "url": "https://vahe.space/",
+          "email": "vahevahevahe@gmail.com",
+          "sameAs": [
+            "https://www.linkedin.com/in/contactvahe/",
+            "https://deployhelp.com",
+            "https://t.me/contactvahe"
+          ],
+          "worksFor": [
+            {
+              "@type": "Organization",
+              "@id": "https://picsart.com/#organization",
+              "name": "Picsart",
+              "url": "https://picsart.com"
+            },
+            {
+              "@type": "Organization",
+              "@id": "https://deployhelp.com/#organization",
+              "name": "DeployHelp",
+              "url": "https://deployhelp.com",
+              "founder": {
+                "@id": "https://vahe.space/#person"
+              }
+            }
+          ],
+          "knowsAbout": [
+            "Business Process Automation",
+            "Customer Support Operations",
+            "Automation Strategy",
+            "Zendesk Administration",
+            "AI-Powered Chatbots",
+            "Python Automation",
+            "SQL Analytics",
+            "Process Improvement"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Yerevan",
+            "addressRegion": "Yerevan",
+            "addressCountry": {
+              "@type": "Country",
+              "name": "Armenia"
+            }
+          },
+          "areaServed": "Worldwide",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Business Inquiries",
+            "email": "vahevahevahe@gmail.com",
+            "availableLanguage": ["English", "Armenian", "Russian"]
+          }
         },
         {
-          "@type": "Organization",
-          "@id": "https://deployhelp.com/#organization",
-          "name": "DeployHelp",
-          "url": "https://deployhelp.com",
-          "founder": {
+          "@type": "ProfessionalService",
+          "@id": "https://vahe.space/#service",
+          "name": "Vahe Khumaryan Consulting",
+          "description": "Business process consulting specializing in automation, AI, and customer support excellence",
+          "url": "https://vahe.space/",
+          "priceRange": "$$$",
+          "email": "vahevahevahe@gmail.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Yerevan",
+            "addressCountry": "AM"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "40.1776",
+            "longitude": "44.5126"
+          },
+          "areaServed": "Worldwide"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://vahe.space/#website",
+          "url": "https://vahe.space/",
+          "name": "Vahe Khumaryan - Business Process Automation Consultant",
+          "publisher": {
             "@id": "https://vahe.space/#person"
-          }
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://vahe.space/#webpage",
+          "url": "https://vahe.space/",
+          "name": "Vahe Khumaryan | Business Process & Automation Consultant",
+          "isPartOf": {
+            "@id": "https://vahe.space/#website"
+          },
+          "about": {
+            "@id": "https://vahe.space/#person"
+          },
+          "datePublished": "2025-01-15T00:00:00+00:00",
+          "dateModified": "2025-11-14T00:00:00+00:00",
+          "inLanguage": "en-US"
         }
-      ],
-      "knowsAbout": [
-        "Business Process Automation",
-        "Customer Support Operations",
-        "Automation Strategy",
-        "Zendesk Administration",
-        "AI-Powered Chatbots",
-        "Python Automation",
-        "SQL Analytics",
-        "Process Improvement"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Yerevan",
-        "addressRegion": "Yerevan",
-        "addressCountry": {
-          "@type": "Country",
-          "name": "Armenia"
-        }
-      },
-      "areaServed": "Worldwide",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "Business Inquiries",
-        "email": "vahevahevahe@gmail.com",
-        "availableLanguage": ["English", "Armenian", "Russian"]
-      }
-    },
-    {
-      "@type": "ProfessionalService",
-      "@id": "https://vahe.space/#service",
-      "name": "Vahe Khumaryan Consulting",
-      "description": "Business process consulting specializing in automation, AI, and customer support excellence",
-      "url": "https://vahe.space/",
-      "priceRange": "$$$",
-      "email": "vahevahevahe@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Yerevan",
-        "addressCountry": "AM"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "40.1776",
-        "longitude": "44.5126"
-      },
-      "areaServed": "Worldwide"
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://vahe.space/#website",
-      "url": "https://vahe.space/",
-      "name": "Vahe Khumaryan - Business Process Automation Consultant",
-      "publisher": {
-        "@id": "https://vahe.space/#person"
-      },
-      "inLanguage": "en-US"
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://vahe.space/#webpage",
-      "url": "https://vahe.space/",
-      "name": "Vahe Khumaryan | Business Process & Automation Consultant",
-      "isPartOf": {
-        "@id": "https://vahe.space/#website"
-      },
-      "about": {
-        "@id": "https://vahe.space/#person"
-      },
-      "datePublished": "2025-01-15T00:00:00+00:00",
-      "dateModified": "2025-11-14T00:00:00+00:00",
-      "inLanguage": "en-US"
+      ]
     }
-  ]
-}
     </script>
 
-    <!-- FAQ Schema for Rich Snippets -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  <!-- FAQ Schema for Rich Snippets -->
+  <script type="application/ld+json">
     {
-      "@type": "Question",
-      "name": "What business process automation services do you offer?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "I offer three core services: Process & Service Design Leadership including journey mapping and SLA/KPI architecture, Automation & AI Engineering with Zendesk and Python/SQL tooling, and Operational Analytics & Enablement with dashboards and team upskilling programs."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you provide Zendesk consulting services?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, I specialize in Zendesk administration, custom routing, automation workflows, chatbot integration, and reporting systems. I help teams optimize their Zendesk instances for maximum efficiency and customer satisfaction."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Where are you based and do you work with international clients?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "I'm based in Yerevan, Armenia, but I work with clients worldwide. I offer remote consulting, strategy sessions, and fractional leadership roles for companies across different time zones."
-      }
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What business process automation services do you offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "I offer three core services: Process & Service Design Leadership including journey mapping and SLA/KPI architecture, Automation & AI Engineering with Zendesk and Python/SQL tooling, and Operational Analytics & Enablement with dashboards and team upskilling programs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide Zendesk consulting services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, I specialize in Zendesk administration, custom routing, automation workflows, chatbot integration, and reporting systems. I help teams optimize their Zendesk instances for maximum efficiency and customer satisfaction."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where are you based and do you work with international clients?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "I'm based in Yerevan, Armenia, but I work with clients worldwide. I offer remote consulting, strategy sessions, and fractional leadership roles for companies across different time zones."
+          }
+        }
+      ]
     }
-  ]
-}
     </script>
 </body>
+
 </html>
