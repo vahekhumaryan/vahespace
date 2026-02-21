@@ -199,6 +199,74 @@
       }
     });
   </script>
+
+  <div id="email-popup" class="email-popup" aria-hidden="true">
+    <div class="email-popup__content">
+      <div class="email-popup__header">
+        <h3 class="email-popup__title">SEND_PACKET</h3>
+        <button class="email-popup__close" aria-label="Close">X</button>
+      </div>
+      <div class="email-popup__body">
+        <a href="#" id="ep-gmail" target="_blank" rel="noopener" class="button button--primary">GMAIL</a>
+        <a href="#" id="ep-outlook" target="_blank" rel="noopener" class="button button--ghost" style="background:var(--accent-blue)">OUTLOOK</a>
+        <a href="#" id="ep-yahoo" target="_blank" rel="noopener" class="button button--ghost" style="background:var(--accent-purple); color:#fff;">YAHOO</a>
+        <button class="button button--ghost" id="copy-email-btn" style="background:#fff">COPY_ADDRESS</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const emailPopup = document.getElementById('email-popup');
+      const gmailBtn = document.getElementById('ep-gmail');
+      const outlookBtn = document.getElementById('ep-outlook');
+      const yahooBtn = document.getElementById('ep-yahoo');
+      const copyEmailBtn = document.getElementById('copy-email-btn');
+      const closePopupBtn = document.querySelector('.email-popup__close');
+      let currentEmail = '';
+
+      document.querySelectorAll('a[href^="mailto:"]').forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetHref = trigger.getAttribute('href');
+          // Handle standard mailto parsing
+          let rawEmail = targetHref.replace('mailto:', '');
+          let subject = '';
+          if (rawEmail.includes('?')) {
+             const parts = rawEmail.split('?');
+             rawEmail = parts[0];
+             const params = new URLSearchParams(parts[1]);
+             subject = params.get('subject') || '';
+          }
+          currentEmail = rawEmail;
+          
+          const to = encodeURIComponent(currentEmail);
+          const subjStr = subject ? encodeURIComponent(subject) : '';
+
+          gmailBtn.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${to}${subjStr ? '&su='+subjStr : ''}`;
+          outlookBtn.href = `https://outlook.live.com/mail/0/deeplink/compose?to=${to}${subjStr ? '&subject='+subjStr : ''}`;
+          yahooBtn.href = `https://compose.mail.yahoo.com/?to=${to}${subjStr ? '&subj='+subjStr : ''}`;
+
+          emailPopup.classList.add('is-open');
+        });
+      });
+
+      const closePopup = () => {
+          emailPopup.classList.remove('is-open');
+          copyEmailBtn.textContent = 'COPY_ADDRESS';
+      };
+
+      closePopupBtn.addEventListener('click', closePopup);
+      emailPopup.addEventListener('click', (e) => {
+        if (e.target === emailPopup) closePopup();
+      });
+
+      copyEmailBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(currentEmail);
+        copyEmailBtn.textContent = 'COPIED!';
+      });
+    });
+  </script>
 </body>
+
 
 </html>
