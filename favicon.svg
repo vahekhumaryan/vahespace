@@ -1,5 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <rect width="100" height="100" fill="#050505" rx="20"/>
-  <path d="M 25 20 L 50 75 L 75 20" stroke="#7ceaff" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="50" cy="80" r="5" fill="#7ceaff"/>
+  <!-- Thick outer black background frame acting as shadow/border -->
+  <rect x="0" y="0" width="100" height="100" rx="0" fill="#050505" />
+  <!-- Main yellow block, slightly offset for 3D brutalist effect -->
+  <rect x="0" y="0" width="90" height="90" rx="0" fill="#ffde59" stroke="#050505" stroke-width="6" />
+  <!-- Inner retro border for detail -->
+  <rect x="8" y="8" width="74" height="74" fill="none" stroke="#050505" stroke-width="2" opacity="0.3" />
+  <!-- Bold uppercase V typography -->
+  <text x="45" y="68" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="64" fill="#050505" text-anchor="middle">V</text>
 </svg>
