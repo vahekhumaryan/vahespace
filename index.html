@@ -107,7 +107,7 @@
         <canvas id="hero-canvas" role="img" aria-label="Canvas animation"></canvas>
         <div class="hero__copy">
           <p class="hero__eyebrow">LOCATION: YEREVAN // STATUS: ONLINE</p>
-          <h1 id="hero-title" class="hero__title">Engineering Support Systems That Don't Suck.</h1>
+          <h1 id="hero-title" class="hero__title">Engineering Business Systems That Don't Suck.</h1>
           <p class="hero__body">I'm Vahe. I build AI copilots, automate the boring stuff, and unfuck customer operations
             for scaling teams. I rip out bad processes and write the automation scripts that actually work.</p>
           <div class="hero__actions">
@@ -208,8 +208,10 @@
       </div>
       <div class="email-popup__body">
         <a href="#" id="ep-gmail" target="_blank" rel="noopener" class="button button--primary">GMAIL</a>
-        <a href="#" id="ep-outlook" target="_blank" rel="noopener" class="button button--ghost" style="background:var(--accent-blue)">OUTLOOK</a>
-        <a href="#" id="ep-yahoo" target="_blank" rel="noopener" class="button button--ghost" style="background:var(--accent-purple); color:#fff;">YAHOO</a>
+        <a href="#" id="ep-outlook" target="_blank" rel="noopener" class="button button--ghost"
+          style="background:var(--accent-blue)">OUTLOOK</a>
+        <a href="#" id="ep-yahoo" target="_blank" rel="noopener" class="button button--ghost"
+          style="background:var(--accent-purple); color:#fff;">YAHOO</a>
         <button class="button button--ghost" id="copy-email-btn" style="background:#fff">COPY_ADDRESS</button>
       </div>
     </div>
@@ -232,27 +234,27 @@
           let rawEmail = targetHref.replace('mailto:', '');
           let subject = '';
           if (rawEmail.includes('?')) {
-             const parts = rawEmail.split('?');
-             rawEmail = parts[0];
-             const params = new URLSearchParams(parts[1]);
-             subject = params.get('subject') || '';
+            const parts = rawEmail.split('?');
+            rawEmail = parts[0];
+            const params = new URLSearchParams(parts[1]);
+            subject = params.get('subject') || '';
           }
           currentEmail = rawEmail;
-          
+
           const to = encodeURIComponent(currentEmail);
           const subjStr = subject ? encodeURIComponent(subject) : '';
 
-          gmailBtn.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${to}${subjStr ? '&su='+subjStr : ''}`;
-          outlookBtn.href = `https://outlook.live.com/mail/0/deeplink/compose?to=${to}${subjStr ? '&subject='+subjStr : ''}`;
-          yahooBtn.href = `https://compose.mail.yahoo.com/?to=${to}${subjStr ? '&subj='+subjStr : ''}`;
+          gmailBtn.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${to}${subjStr ? '&su=' + subjStr : ''}`;
+          outlookBtn.href = `https://outlook.live.com/mail/0/deeplink/compose?to=${to}${subjStr ? '&subject=' + subjStr : ''}`;
+          yahooBtn.href = `https://compose.mail.yahoo.com/?to=${to}${subjStr ? '&subj=' + subjStr : ''}`;
 
           emailPopup.classList.add('is-open');
         });
       });
 
       const closePopup = () => {
-          emailPopup.classList.remove('is-open');
-          copyEmailBtn.textContent = 'COPY_ADDRESS';
+        emailPopup.classList.remove('is-open');
+        copyEmailBtn.textContent = 'COPY_ADDRESS';
       };
 
       closePopupBtn.addEventListener('click', closePopup);
