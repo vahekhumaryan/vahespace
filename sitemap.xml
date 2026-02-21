@@ -1,49 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-
-  <!-- Homepage -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://vahe.space/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2024-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://vahe.space/assets/images/avatar.jpg</image:loc>
-      <image:title>Vahe Khumaryan - Business Process Automation Consultant</image:title>
-    </image:image>
   </url>
-
-  <!-- Services Section -->
-  <url>
-    <loc>https://vahe.space/#services</loc>
-    <lastmod>2025-11-14</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Expertise Section -->
-  <url>
-    <loc>https://vahe.space/#focus</loc>
-    <lastmod>2025-11-14</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Approach Section -->
-  <url>
-    <loc>https://vahe.space/#approach</loc>
-    <lastmod>2025-11-14</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Contact Section -->
-  <url>
-    <loc>https://vahe.space/#contact</loc>
-    <lastmod>2025-11-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
 </urlset>
