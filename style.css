@@ -440,14 +440,14 @@ nav a:hover {
 .process {
     counter-reset: step;
     display: grid;
-    gap: 1.5rem;
+    gap: 2.5rem;
     padding: 0;
     margin: 0;
 }
 
 .process li {
     list-style: none;
-    padding: 1.5rem 1.5rem 1.5rem 5rem;
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
     position: relative;
     background: var(--surface);
     border: var(--border-width) solid var(--border-color);
@@ -455,6 +455,7 @@ nav a:hover {
     transition: transform 0.2s;
     font-weight: 700;
     font-size: 1.2rem;
+    margin-top: 1rem;
 }
 
 .process li:nth-child(odd) {
@@ -481,7 +482,7 @@ nav a:hover {
     content: "0" counter(step);
     position: absolute;
     left: 1.5rem;
-    top: 1.8rem;
+    top: -1.5rem;
     font-family: var(--font-heading);
     font-size: 1.8rem;
     color: var(--surface);
@@ -625,16 +626,18 @@ footer {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 1rem;
     padding: 0 1rem;
 }
 
 .sticky-cta__text {
     font-weight: 900;
-    font-size: 1.4rem;
+    font-size: clamp(1rem, 4vw, 1.4rem);
     text-transform: uppercase;
     font-family: var(--font-heading);
+    text-align: center;
 }
 
 *:focus-visible {
