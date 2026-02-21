@@ -80,7 +80,9 @@
   <div id="sticky-cta" class="sticky-cta" role="banner" aria-label="Quick action bar" hidden>
     <div class="sticky-cta__content">
       <span class="sticky-cta__text">Tired of manual processes?</span>
-      <a href="#init" class="button button--primary button--small">/initiate_call</a>
+      <a href="https://calendar.app.google/uzr4RLGVq5CqbfpE8" target="_blank"
+        onclick="window.open(this.href, 'calendar', 'width=800,height=700,scrollbars=yes'); return false;"
+        class="button button--primary button--small">/initiate_call</a>
     </div>
   </div>
 
@@ -95,7 +97,9 @@
           <li><a href="#modules">/modules</a></li>
           <li><a href="#stack">/stack</a></li>
           <li><a href="#protocol">/protocol</a></li>
-          <li><a href="#init">/init</a></li>
+          <li><a href="https://calendar.app.google/uzr4RLGVq5CqbfpE8" target="_blank"
+              onclick="window.open(this.href, 'calendar', 'width=800,height=700,scrollbars=yes'); return false;">/init</a>
+          </li>
           <li><a href="#ping">/ping</a></li>
         </ul>
       </nav>
@@ -110,7 +114,9 @@
           <p class="hero__body">I'm Vahe. I build AI copilots, automate the boring stuff, and unfuck customer operations
             for scaling teams. I rip out bad processes and write the automation scripts that actually work.</p>
           <div class="hero__actions">
-            <a class="button button--primary" href="#init">&gt; RUN_STRATEGY_CALL</a>
+            <a class="button button--primary" href="https://calendar.app.google/uzr4RLGVq5CqbfpE8" target="_blank"
+              onclick="window.open(this.href, 'calendar', 'width=800,height=700,scrollbars=yes'); return false;">&gt;
+              RUN_STRATEGY_CALL</a>
             <a class="button button--ghost" href="https://www.linkedin.com/in/contactvahe/" target="_blank"
               rel="noopener">
               /LINKEDIN
@@ -234,17 +240,7 @@
         </ol>
       </section>
 
-      <section id="init" class="section" aria-labelledby="init-title">
-        <div class="section__header">
-          <p class="section__eyebrow">INITIALIZE</p>
-          <h2 id="init-title" class="section__title">Let's build something.</h2>
-          <p class="calendar__copy">Grab a slot. Bring your worst operational headache and we'll figure out how to
-            automate it out of existence.</p>
-        </div>
-        <div class="calendar" role="region" aria-live="polite">
-          <div id="calendar-button"></div>
-        </div>
-      </section>
+
 
       <section id="ping" class="section" aria-labelledby="ping-title">
         <div class="section__header">
@@ -267,7 +263,6 @@
   </div>
 
   <!-- Scripts -->
-  <script src="https://calendar.google.com/calendar/scheduling-button-script.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -277,7 +272,6 @@
       const backToTop = document.getElementById('back-to-top');
       const stickyCTA = document.getElementById('sticky-cta');
       const heroSection = document.querySelector('.hero');
-      const bookingSection = document.getElementById('init');
       let lastScrollY = window.scrollY;
 
       window.addEventListener('scroll', () => {
@@ -306,27 +300,9 @@
         lastScrollY = currentScrollY;
       }, { passive: true });
 
-      if (stickyCTA && bookingSection) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) stickyCTA.classList.remove('visible');
-          });
-        }, { threshold: 0.1 });
-        observer.observe(bookingSection);
-      }
       if (backToTop) {
         backToTop.addEventListener('click', () => {
           window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      }
-
-      const target = document.getElementById('calendar-button');
-      if (target && window.calendar && window.calendar.schedulingButton) {
-        window.calendar.schedulingButton.load({
-          url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2iVtjuv1amu_Ez6lvKqkXq9PPpnccskOue3zxN2maVGsMWctIDSFgDeCxmkw2E8yKMtH6jTHHo?gv=true',
-          color: '#7ceaff',
-          label: 'INITIALIZE CALL',
-          target
         });
       }
     });
