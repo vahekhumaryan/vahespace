@@ -726,3 +726,39 @@ footer {
     display: grid;
     gap: 1rem;
 }
+
+/* Mobile Responsiveness Overrides */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hero__meta {
+        position: static;
+        width: 100%;
+        margin-top: 2rem;
+    }
+    .contact-links {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .contact-links > * {
+        width: 100%;
+        text-align: center;
+    }
+}
+@media (max-width: 480px) {
+    .page {
+        padding: 0.5rem;
+    }
+    .email-popup__content {
+        padding: 1.5rem 1rem;
+    }
+}
