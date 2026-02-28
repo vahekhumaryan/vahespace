@@ -1,0 +1,26 @@
+name: Deploy to Hetzner
+
+on:
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to Server via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          script: |
+            cd /var/www/vahe.space
+            git fetch
+            # Check which branch is active, usually master for vahespace based on git logs
+            branch=$(git remote show origin | grep 'HEAD branch' | cut -d' ' -f5)
+            if [ -z "$branch" ]; then branch="master"; fi
+            git reset --hard origin/$branch
